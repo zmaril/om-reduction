@@ -12,12 +12,12 @@
     (dom/a #js {:onClick (fn [_]
                            (println "on")
                            (swap! state update-in [:calling?]
-                                  (fn [_] true)))}
+                                  (fn [_] false)))}
            (str "On"))
     (dom/button #js {:onClick (fn [_]
                            (println "off")
                            (swap! state update-in [:calling?]
-                                  (fn [_] false)))}
+                                  (fn [_] true)))}
            (str "Off"))))
 
 (defn redux-app [app]
